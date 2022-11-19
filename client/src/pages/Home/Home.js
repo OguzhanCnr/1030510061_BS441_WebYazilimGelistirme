@@ -10,7 +10,7 @@ function Home() {
         </h1>
         <img src={logo} className="App-logo" alt="logo" />
         <p style={{ marginTop: 80 }}>
-          Oyunumuza Hoş Geldiniz Lütfen Kullanıcı Adınızı Giriniz:
+          Oyunumuza Hoş Geldiniz Kullanıcı Adınızı Giriniz:
         </p>
         <div className='container col-md-3 col-6'>
           <div class="input-group mb-3">
