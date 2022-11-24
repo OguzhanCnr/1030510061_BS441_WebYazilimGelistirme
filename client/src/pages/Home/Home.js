@@ -5,12 +5,13 @@ import { Linkedin,Instagram,Github } from "react-bootstrap-icons";
 function Home() {
   return (
       <header className="App-header">
-        <h1 style={{ marginBottom: 80 }}>
+        <h1 className="mt-2">
           TAŞ-KAĞIT-MAKAS
         </h1>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p style={{ marginTop: 80 }}>
-          Oyunumuza Hoş Geldiniz Kullanıcı Adınızı Giriniz:
+       
+        <img src={logo} className="App-logo mt-auto" alt="logo" />
+        <p className='mt-auto'>
+          Oyunumuza Hoş Geldiniz lütfen Kullanıcı Adınızı Giriniz:
         </p>
         <div className='container col-md-3 col-6'>
           <div class="input-group mb-3">
@@ -19,7 +20,7 @@ function Home() {
           </div>
         </div>
         <button type="button" class="btn btn-outline-light mt-3">Oyuna Başla</button>
-        <div class="container">
+        <div class="container mt-auto">
           <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
             <div class="col-md-4 d-flex align-items-center">
               <span class="mb-3 mb-md-0 text-muted" style={{fontSize:20}}>© 2022 Oğuzhan Çınar</span>
