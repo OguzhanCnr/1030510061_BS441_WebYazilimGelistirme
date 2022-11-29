@@ -11,7 +11,7 @@ function Home() {
        
         <img src={logo} className="App-logo mt-auto" alt="logo" />
         <p className='mt-auto'>
-          Oyunumuza Hoş Geldiniz lütfen Kullanıcı Adınızı Giriniz:
+          Oyunumuza Hoş Geldiniz Lütfen Kullanıcı Adınızı Giriniz:
         </p>
         <div className='container col-md-3 col-6'>
           <div class="input-group mb-3">
