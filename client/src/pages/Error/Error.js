@@ -2,7 +2,7 @@
 function Error() {
   return (
   <div>
-    <h1>sa</h1>
+    <h1>404</h1>
   </div>
   );
 }
