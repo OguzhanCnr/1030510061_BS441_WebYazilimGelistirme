@@ -3,6 +3,7 @@ import {useNavigate } from "react-router-dom";
 import RuleModal from '../../components/RuleModal/RuleModal';
 import Footer from '../../components/Footer/Footer';
 import {useState} from 'react';
+import MovingText from 'react-moving-text'
 
 function Home() {
   const navigate = useNavigate();
@@ -17,13 +18,24 @@ function Home() {
     navigate("/"+address)
   };
   return (
-    
+ 
         <div className='App-home2'>
-
-       
-        <h1 className="mt-2">
+        
+      
+          <MovingText
+          type="slideInFromTop"
+        duration="1000ms"
+        delay="200ms"
+        direction="normal"
+        timing="ease"
+        iteration="3"
+        fillMode="none">
+       <h1 className="mt-2">
           TAŞ KAĞIT MAKAS
         </h1>
+     </MovingText>
+        
+      
         <img src={logo} className="App-logo mt-auto" alt="logo" />
         <p className='mt-auto'>
           Oyunumuza Hoş Geldiniz Lütfen Kullanıcı Adını Giriniz:
@@ -35,7 +47,7 @@ function Home() {
         </div>
         <button type="button" onClick={()=>handleClick("game")} class="btn btn-outline-light mt-3" style={{width:150}}>Normal Oyun</button>
         <button type="button" onClick={()=>handleClick("scoregame")} class="btn btn-outline-light mt-3" style={{width:150}}>Skor Oyun</button>
-        <RuleModal></RuleModal>
+       
         <Footer/>
         </div>
   );
