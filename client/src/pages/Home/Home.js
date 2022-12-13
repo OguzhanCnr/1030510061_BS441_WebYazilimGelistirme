@@ -17,7 +17,10 @@ function Home() {
     navigate("/"+address)
   };
   return (
-      <header className="App-header">
+    
+        <div className='App-home2'>
+
+       
         <h1 className="mt-2">
           TAŞ KAĞIT MAKAS
         </h1>
@@ -34,7 +37,7 @@ function Home() {
         <button type="button" onClick={()=>handleClick("scoregame")} class="btn btn-outline-light mt-3" style={{width:150}}>Skor Oyun</button>
         <RuleModal></RuleModal>
         <Footer/>
-      </header>
+        </div>
   );
 }
 
