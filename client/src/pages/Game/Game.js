@@ -3,9 +3,12 @@ import rock from '../../assets/images/rock.png';
 import paper from '../../assets/images/paper.png';
 import scissors from '../../assets/images/scissors.png';
 import { useGame } from "../../context/gameContext";
+import {useNavigate } from "react-router-dom";
+import RuleModal from '../../components/RuleModal/RuleModal';
 
 function Game() {
   const [text, setText] = useState("");
+  const navigate = useNavigate();
   const username = localStorage.getItem("username");
   const { Game, userCounter, computerCounter,userImg,computerImg } = useGame();
   return (
@@ -14,10 +17,10 @@ function Game() {
     <div style={{ color: "white" }}>
 
       <div class="d-flex justify-content-start ms-1 me-1 mt-2">
-        <button type="button" class="btn btn-outline-light mt-3" style={{ width: 200 }}>Ana Sayfa</button>
+        <button type="button" class="btn btn-outline-light mt-3" onClick={() => navigate('/')} style={{ width: 200 }}>Ana Sayfa</button>
         <button type="button" class="btn btn-outline-light mt-3 ms-4" style={{ width: 200 }}>Skoru Kaydet</button>
-        <button type="button" class="ms-auto btn btn-outline-light mt-3 " style={{ width: 200 }}>Oyun Kuralları</button>
-        <button type="button" class="btn btn-outline-light mt-3 ms-4 " style={{ width: 200 }}>Skor Tablosu</button>
+        <button type="button" class="ms-auto btn btn-outline-light mt-3" style={{ width: 200 }}>Skor Tablosu</button>
+        <RuleModal/>
       </div>
 
 
