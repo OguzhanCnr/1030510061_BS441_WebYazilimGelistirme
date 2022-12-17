@@ -8,6 +8,17 @@
   pointer-events: none;
 }
 
+.animasyon{
+animation: hareket 1s linear infinite;
+}
+@keyframes hareket{
+  from{    transform: translateY(0);}
+  to{
+    transform: translateY(+50px);
+  }
+}
+
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 10s linear;
