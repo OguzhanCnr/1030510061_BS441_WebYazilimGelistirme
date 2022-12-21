@@ -1,6 +1,6 @@
 import { useContext, useState, useEffect, createContext } from "react"
 import baseApi from "../api/baseApi";
-import {useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import rock from '../assets/images/rock.png';
 import paper from '../assets/images/paper.png';
 import scissors from '../assets/images/scissors.png';
@@ -13,7 +13,7 @@ const GameProvider = ({ children }) => {
     const [computer, setComputer] = useState(1)
     const [userCounter, setUserCounter] = useState(0)
     const [computerCounter, setComputerCounter] = useState(0)
-
+    const gameMode = localStorage.getItem("gameMode");
     function SaveGame() {
         const navigate = useNavigate();
         baseApi.post(`User/`, {
@@ -23,11 +23,39 @@ const GameProvider = ({ children }) => {
         ).then(() => {
             navigate("/");
         }).catch(function (error) {
-            console.log("sa", error)
+
         })
     }
+    function GetUser(setscoreTable) {
+        baseApi.get(`/User`)
+            .then((getData) => {
+                setscoreTable(getData.data);
+            })
+    }
+    function AddScore() {
+        baseApi.post(`/User`, {
+            name: localStorage.getItem("username"),
+            score: (userCounter - computerCounter).toString(),
+        }).then(() => {
 
-
+        })
+    }
+    function Deneme(setText) {
+        if (gameMode == "1") {
+            if (userCounter == 3) {
+                console.log("Dabed abi kazandı");
+                setText("Oyun Bitti Kazandınız")
+                setUserCounter(0)
+                setComputerCounter(0)
+            }
+            else if (computerCounter == 3) {
+                console.log("Dabed abi kaybetti");
+                setText("Oyun Bitti Bilgisayar Kazandı")
+                setUserCounter(0)
+                setComputerCounter(0)
+            }
+        }
+    }
     function Game(user, setText) {
         setComputer(Math.floor(Math.random() * 3) + 1);
         if (user == "1") {
@@ -93,10 +121,11 @@ const GameProvider = ({ children }) => {
         else {
             setText("Hatalı İşlem");
         }
+       Deneme(setText);
 
     }
 
-    const values = { userCounter, computerCounter,computerImg,userImg, Game, SaveGame }
+    const values = { userCounter, computerCounter, computerImg, userImg, Game, SaveGame, GetUser, AddScore }
 
     return <gameContext.Provider value={values}>{children}</gameContext.Provider>
 }

@@ -1,5 +1,7 @@
 
 .App{
+  display: flex;
+  flex-direction: column;
   background-color: #282c34;
   min-height: 100vh;
 }
@@ -7,7 +9,12 @@
   height: 25vmin;
   pointer-events: none;
 }
-
+.GameApp{
+  display: flex;
+  flex-direction: column;
+  background-color: #282c34;
+  min-height: 100vh;
+}
 .animasyon{
 animation: hareket 1s linear infinite;
 }

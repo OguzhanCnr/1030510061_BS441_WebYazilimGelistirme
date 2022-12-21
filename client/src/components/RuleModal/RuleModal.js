@@ -41,7 +41,7 @@ function RuleModal() {
   const [modalShow, setModalShow] = React.useState(false);
   return (
     <>
-    <button type="button" class="btn btn-outline-light mt-3 ms-4" style={{width:200}} onClick={() => setModalShow(true)}>Oyuna Kuralları</button>
+    <button type="button" class="ms-auto btn btn-outline-light mt-3"  style={{width:200}} onClick={() => setModalShow(true)}>Oyun Kuralları</button>
     <MyVerticallyCenteredModal
       show={modalShow}
       onHide={() => setModalShow(false)}
