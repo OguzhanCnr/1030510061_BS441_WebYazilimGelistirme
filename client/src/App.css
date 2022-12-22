@@ -40,8 +40,6 @@ animation: hareket 1s linear infinite;
   color: white;
 }
 .App-home2{
- 
-  
   min-height: 100vh;
   display: flex;
   flex-direction: column;

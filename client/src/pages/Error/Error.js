@@ -1,4 +1,4 @@
-
+//Hata alınca çalışacak olan kısım
 function Error() {
   return (
   <div>

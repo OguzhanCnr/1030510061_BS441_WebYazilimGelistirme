@@ -5,6 +5,7 @@ import GameScreen from '../../components/GameScreen/GameScreen';
 import RuleModal from '../../components/RuleModal/RuleModal';
 import ScoreTable from "../../components/ScoreTable/ScoreTable";
 import AddScore from "../../components/AddScore/AddScore";
+//Skorlu oyun modumuz kullanıcı bu modda skorunu kayıt edebiliyor.
 function CompetitiveMode() {
   const [text, setText] = useState("");
   const navigate = useNavigate();

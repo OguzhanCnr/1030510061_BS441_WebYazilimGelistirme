@@ -3,7 +3,7 @@ import {useNavigate } from "react-router-dom";
 import RuleModal from '../../components/RuleModal/RuleModal';
 import GameButtons from '../../components/GameButtons/GameButtons';
 import GameScreen from "../../components/GameScreen/GameScreen";
-
+//3 de biten oyun modumuz
 function Game() {
   const [text, setText] = useState("");
   const navigate = useNavigate();

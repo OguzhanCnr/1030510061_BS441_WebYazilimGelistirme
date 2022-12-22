@@ -2,6 +2,7 @@ import MovingText from 'react-moving-text'
 
 function AnimationText() { 
   return (
+    //Ekranda hareketli şekilde taş kağıt makas yazısı yazar
     <MovingText
           type="slideInFromTop"
         duration="1000ms"

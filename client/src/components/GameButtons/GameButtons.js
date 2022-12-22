@@ -7,8 +7,10 @@ function GameButtons({setText,setImages,setCurrentIndex}) {
  
   const { Game } = useGame();
 
-
-  const   handleClick = (user, setText) => {
+  //Taş kağıt makas animasyonu
+  //Kullanıcı seçim yaptığında 1 saniye aralıklar ile taş kağıt makas resimlerini ekranda gösterir
+  //Ardından gameContext kısmındaki Game fonksiyonunu çalıştırır.
+  const handleClick = (user, setText) => {
     let i = 0;
     setImages([rock, paper, scissors]);
     let timerId = setTimeout(function tick() {
@@ -32,7 +34,7 @@ function GameButtons({setText,setImages,setCurrentIndex}) {
         Lütfen Seçim Yapınız
       </h3>
       <div className=" d-flex mt-5">
-        <div className="col-md-4 me-4"><img src={scissors} enabled={true} onClick={() => handleClick("3", setText)} className=" mt-auto" style={{ width: 100, height: 80 }} alt="logo" />
+        <div className="col-md-4 me-4"><img src={scissors}  onClick={() => handleClick("3", setText)} className=" mt-auto" style={{ width: 100, height: 80 }} alt="logo" />
         </div>
         <div className="col-md-4 me-4"><img src={paper} onClick={() => handleClick("2", setText)} className=" mt-auto" style={{ width: 100, height: 80 }} alt="logo" />
         </div>

@@ -5,6 +5,7 @@ import React, { useState,useEffect } from 'react';
 function MyVerticallyCenteredModal(props) {
  
   return (
+    //Oyun skorlarını tutan modal
     <Modal
       {...props}
       size="lg"
@@ -20,31 +21,22 @@ function MyVerticallyCenteredModal(props) {
       <Table striped bordered hover variant="dark">
       <thead>
         <tr>
-         
           <th>Username</th>
           <th>Score</th>
-         
         </tr>
       </thead>
       <tbody>
         {props.scoreTable && props.scoreTable.map((data,index)=>(
           <tr>
-         
           <td>{data.name}</td>
           <td>{data.score}</td>
-          
         </tr>
-
         ))}
-        
-        
       </tbody>
     </Table>
       </Modal.Body>
       <Modal.Footer>
-       
         <button type="button" class="btn btn-dark mt-3" style={{width:150}} onClick={props.onHide}>Kapat</button>
-   
       </Modal.Footer>
     </Modal>
   );

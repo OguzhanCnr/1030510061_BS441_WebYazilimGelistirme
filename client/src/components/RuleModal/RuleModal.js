@@ -1,8 +1,8 @@
-import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import React, { useState } from 'react';
 function MyVerticallyCenteredModal(props) {
   return (
+    //Oyunun kurallarının yazdığı modal ve buton
     <Modal
       {...props}
       size="lg"
