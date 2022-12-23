@@ -1,8 +1,11 @@
 //Hata alınca çalışacak olan kısım
 function Error() {
   return (
-  <div>
-    <h1>404</h1>
+  <div className="App-home">
+    
+  
+    <h1>Hata</h1>
+  
   </div>
   );
 }

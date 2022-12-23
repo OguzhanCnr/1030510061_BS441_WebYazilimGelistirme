@@ -1,7 +1,9 @@
+import { useEffect } from "react";
 import { useGame } from "../../context/gameContext";
 function GameScreen({text,currentIndex,images}) {
   const username = localStorage.getItem("username");
   const { userCounter, computerCounter,userImg,computerImg } = useGame();
+
   return (
     <>
         <h3 className="mt-2">

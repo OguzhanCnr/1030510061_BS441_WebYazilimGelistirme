@@ -1,10 +1,11 @@
 import './layout.css'
 import '../../App.css';
 import { Outlet } from 'react-router-dom';
+import Footer from '../../components/Footer/Footer';
 //Layout sayfamız
 function Layout() {
   return (
-    <div className="App">
+    <div className="GameApp">
       <div>
         <div class="starsec"></div>
         <div class="starthird"></div>
@@ -12,7 +13,7 @@ function Layout() {
         <div class="starfifth"></div>
       </div>
       <Outlet></Outlet>
-
+      <Footer/>
     </div>
   );
 }

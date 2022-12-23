@@ -22,9 +22,9 @@ function MyVerticallyCenteredModal(props) {
         </p>
         <p>
          Oyunumuzda iki adet oyun modu vardır.<br/>
-         Normal oyun modunda herhangi bir skor tutulmaz 1 puan alan kazanır.<br/><br/>
-         Skor oyun modunda ise istediğiniz kadar oynayabilirsiniz. Kazandığınız her oyun başına skorunuz
-         1 puan artar, kaybettiğinizde ise 1 puan azalır. <br/><br/>
+         Normal oyun modunda herhangi bir skor tutulmaz 3 puana sahip olan kazanır.<br/><br/>
+         Rekabet oyun modunda ise istediğiniz kadar oynayabilirsiniz. Kazandığınız her oyun başına skorunuz
+         1 puan artar, kaybettiğinizde ise 1 puan azalır.Skoru kaydet diyerek skorunuzu kaydedebilirsiniz. <br/><br/>
          Dikkat edin eksi puana düşebilirsiniz :)  
         </p>
       </Modal.Body>

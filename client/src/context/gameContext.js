@@ -26,12 +26,15 @@ const GameProvider = ({ children }) => {
 
         })
     }
+
+    //Kullanıcı skorlarını getiren fonksiyon
     function GetUser(setscoreTable) {
         baseApi.get(`/User`)
             .then((getData) => {
                 setscoreTable(getData.data);
             })
     }
+    //Kullanıcı skoru ekleyen fonksiyon
     function AddScore() {
         baseApi.post(`/User`, {
             name: localStorage.getItem("username"),
@@ -56,7 +59,10 @@ const GameProvider = ({ children }) => {
             }
         }
     }
-    function Game(user, setText) {
+
+
+    //Oyunumuzun çalıştığı ve ana ekrandaki resimleri yazıları güncelleyen fonksiyon
+   async function Game(user, setText) {
         setComputer(Math.floor(Math.random() * 3) + 1);
         if (user == "1") {
             setUserImg(rock)
@@ -121,8 +127,7 @@ const GameProvider = ({ children }) => {
         else {
             setText("Hatalı İşlem");
         }
-       Deneme(setText);
-
+        await Deneme(setText);
     }
 
     const values = { userCounter, computerCounter, computerImg, userImg, Game, SaveGame, GetUser, AddScore }

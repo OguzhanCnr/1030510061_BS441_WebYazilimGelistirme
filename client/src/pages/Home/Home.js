@@ -22,7 +22,7 @@ function Home() {
   };
   return (
  
-        <div className='App-home2'>
+        <div className='App-home'>
        <AnimationText/>
         <img src={logo} className="App-logo mt-auto" alt="logo" />
         <p className='mt-auto'>
@@ -35,7 +35,7 @@ function Home() {
         </div>
        <button type="button" onClick={()=>handleClick("game","1")} class="btn btn-outline-light mt-3" style={{width:150}}>Normal Oyun</button>
        <button type="button" onClick={()=>handleClick("competitive","2")} class="btn btn-outline-light mt-3" style={{width:150}}>Rekabet Modu</button>
-        <Footer/>
+  
         </div>
   );
 }
