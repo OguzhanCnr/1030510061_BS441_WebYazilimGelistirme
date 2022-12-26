@@ -7,6 +7,7 @@ namespace TkmApi.Data
     {
         public Context(DbContextOptions<Context> options) : base(options)
         {
+            Database.Migrate();
         }
      
         public DbSet<Users> users { get; set; }
