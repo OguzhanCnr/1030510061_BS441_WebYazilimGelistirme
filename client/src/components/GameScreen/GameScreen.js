@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useGame } from "../../context/gameContext";
-function GameScreen({text,currentIndex,images}) {
+function GameScreen({currentIndex,images}) {
   const username = localStorage.getItem("username");
-  const { userCounter, computerCounter,userImg,computerImg } = useGame();
+  const { userCounter, computerCounter,userImg,computerImg,text } = useGame();
 
   return (
     <>

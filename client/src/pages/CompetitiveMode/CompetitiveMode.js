@@ -8,7 +8,6 @@ import AddScore from "../../components/AddScore/AddScore";
 
 //Skorlu oyun modumuz kullanıcı bu modda skorunu kayıt edebiliyor.
 function CompetitiveMode() {
-  const [text, setText] = useState("");
   const navigate = useNavigate();
   const [currentIndex,setCurrentIndex]=useState(0);
   const [images, setImages] = useState([
@@ -25,11 +24,11 @@ function CompetitiveMode() {
       </div>
 
       <div class="d-flex justify-content-between ms-1 me-1 mt-2">
-      <GameScreen text={text} currentIndex={currentIndex} images={images} ></GameScreen>
+      <GameScreen currentIndex={currentIndex} images={images} ></GameScreen>
       </div>
 
       <div className="GameButton">
-      <GameButtons setCurrentIndex={setCurrentIndex} setImages={setImages} setText={setText} ></GameButtons>
+      <GameButtons setCurrentIndex={setCurrentIndex} setImages={setImages} ></GameButtons>
       </div>
   
     </div>

@@ -4,29 +4,28 @@ import { useNavigate } from "react-router-dom";
 import rock from '../assets/images/rock.png';
 import paper from '../assets/images/paper.png';
 import scissors from '../assets/images/scissors.png';
+import useSound from 'use-sound';
+import winSound from '../assets/images/de.wav';
+import loseSound from '../assets/images/loseSound.mp3';
+
+
 const gameContext = createContext()
 //1-Taş 2-Kağıt 3-Makas
 
 const GameProvider = ({ children }) => {
     const [computerImg, setComputerImg] = useState("")
+    const [text, setText] = useState("")
     const [userImg, setUserImg] = useState("")
     const [computer, setComputer] = useState(1)
     const [userCounter, setUserCounter] = useState(0)
     const [computerCounter, setComputerCounter] = useState(0)
     const gameMode = localStorage.getItem("gameMode");
-    function SaveGame() {
-        const navigate = useNavigate();
-        baseApi.post(`User/`, {
-            username: localStorage.getItem("username"),
-            score: userCounter - computerCounter
-        }
-        ).then(() => {
-            navigate("/");
-        }).catch(function (error) {
-
-        })
-    }
-
+    const [Win] = useSound(winSound);
+    const [Lose] = useSound(loseSound);
+    useEffect(() => {
+          Deneme(setText);
+        },[userCounter,computerCounter])
+  
     //Kullanıcı skorlarını getiren fonksiyon
     function GetUser(setscoreTable) {
         baseApi.get(`/User`)
@@ -39,50 +38,55 @@ const GameProvider = ({ children }) => {
         baseApi.post(`/User`, {
             name: localStorage.getItem("username"),
             score: (userCounter - computerCounter).toString(),
-        }).then(() => {
-
         })
     }
-    function Deneme(setText) {
+    function Deneme() {
         if (gameMode == "1") {
+        
             if (userCounter == 3) {
+                
                 console.log("Dabed abi kazandı");
                 setText("Oyun Bitti Kazandınız")
                 setUserCounter(0)
                 setComputerCounter(0)
+                Win()
+       
             }
             else if (computerCounter == 3) {
-                console.log("Dabed abi kaybetti");
+                
                 setText("Oyun Bitti Bilgisayar Kazandı")
                 setUserCounter(0)
                 setComputerCounter(0)
+                Lose()
+         
             }
         }
     }
 
 
     //Oyunumuzun çalıştığı ve ana ekrandaki resimleri yazıları güncelleyen fonksiyon
-   async function Game(user, setText) {
+    function Game(user) {
         setComputer(Math.floor(Math.random() * 3) + 1);
         if (user == "1") {
             setUserImg(rock)
             if (computer == "1") {
                 setText("Berabere");
                 setComputerImg(rock)
+              
             }
             else if (computer == "2") {
                 setText("Bilgisayar Kazandı");
                 setComputerImg(paper)
                 setComputerCounter(computerCounter + 1)
+              
             }
             else if (computer == "3") {
                 setText("Kazandınız");
                 setComputerImg(scissors)
                 setUserCounter(userCounter + 1)
+               
             }
-            else {
-                setText("Hatalı İşlem");
-            }
+        
         }
         else if (user == "2") {
             setUserImg(paper)
@@ -100,9 +104,7 @@ const GameProvider = ({ children }) => {
                 setComputerImg(scissors)
                 setComputerCounter(computerCounter + 1)
             }
-            else {
-                setText("Hatalı İşlem");
-            }
+          
         }
         else if (user == "3") {
             setUserImg(scissors)
@@ -120,17 +122,12 @@ const GameProvider = ({ children }) => {
                 setText("Berabere");
                 setComputerImg(scissors)
             }
-            else {
-                setText("Hatalı İşlem");
-            }
+           
         }
-        else {
-            setText("Hatalı İşlem");
-        }
-        await Deneme(setText);
+      
     }
 
-    const values = { userCounter, computerCounter, computerImg, userImg, Game, SaveGame, GetUser, AddScore }
+    const values = { userCounter, computerCounter, computerImg, userImg, Game, GetUser, AddScore,text,setText }
 
     return <gameContext.Provider value={values}>{children}</gameContext.Provider>
 }

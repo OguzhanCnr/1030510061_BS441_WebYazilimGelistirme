@@ -3,8 +3,10 @@ function Error() {
   return (
   <div className="App-home">
     
-  
-    <h1>Hata</h1>
+  <div className="m-auto">
+  <h1>Böyle bir sayfa yok :)</h1>
+
+  </div>
   
   </div>
   );

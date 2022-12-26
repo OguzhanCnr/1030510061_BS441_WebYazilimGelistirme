@@ -1,6 +1,5 @@
 import logo from '../../assets/images/logo.png';
 import {useNavigate } from "react-router-dom";
-import Footer from '../../components/Footer/Footer';
 import {useState} from 'react';
 import AnimationText from '../../components/MovingText/AnimationText';
 //Ana ekranımız

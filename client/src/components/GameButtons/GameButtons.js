@@ -3,9 +3,9 @@ import { useGame } from "../../context/gameContext";
 import rock from '../../assets/images/rock.png';
 import paper from '../../assets/images/paper.png';
 import scissors from '../../assets/images/scissors.png';
-function GameButtons({setText,setImages,setCurrentIndex}) {
+function GameButtons({setImages,setCurrentIndex}) {
  
-  const { Game,userCounter,computerCounter } = useGame();
+  const { Game,userCounter,computerCounter,setText } = useGame();
 
     const deneme = () => {
       if(userCounter==3){
@@ -17,7 +17,7 @@ function GameButtons({setText,setImages,setCurrentIndex}) {
   //Taş kağıt makas animasyonu
   //Kullanıcı seçim yaptığında 1 saniye aralıklar ile taş kağıt makas resimlerini ekranda gösterir
   //Ardından gameContext kısmındaki Game fonksiyonunu çalıştırır.
-  const  handleClick =  (user, setText) => {
+  const  handleClick = (user, setText) => {
     let i = 0;
     setImages([rock, paper, scissors]);
     let timerId = setTimeout(function tick() {
@@ -33,6 +33,7 @@ function GameButtons({setText,setImages,setCurrentIndex}) {
       }
     }, 1000);
     setTimeout(() => {  Game(user, setText) }, 3000);
+    
    // setTimeout(() => {  deneme() }, 3000);
    
   };
